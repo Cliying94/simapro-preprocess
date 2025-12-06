@@ -19,7 +19,9 @@ CATEGORIES = [
 ]
 
 OUTPUT_COLUMNS = ['Category', 'Name', 'Subcompartment', 'Unit']
-MATERIAL_LIKE = {'Materials/fuels', 'Electricity/heat', 'Waste to treatment'}
+MATERIAL_LIKE = {'Materials/fuels', 'Electricity/heat'}
+WASTE_CATEGORY = 'Waste to treatment'
+FINAL_WASTE_CATEGORIES = {'Final waste flows', 'final waste flows'}
 
 LOCATION_CODES = set([
     'CN', 'US', 'JP', 'IN', 'DE', 'FR', 'GB', 'IT', 'CA', 'BR', 'RU', 'KR', 'ES',

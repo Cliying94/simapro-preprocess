@@ -6,7 +6,13 @@ from typing import Iterable, List, Optional
 
 import pandas as pd
 
-from .config import CATEGORIES, MATERIAL_LIKE, OUTPUT_COLUMNS
+from .config import (
+    CATEGORIES,
+    FINAL_WASTE_CATEGORIES,
+    MATERIAL_LIKE,
+    OUTPUT_COLUMNS,
+    WASTE_CATEGORY,
+)
 from .parser import find_category_blocks, load_excel
 from .utils import is_number, strip_country_code
 
@@ -64,6 +70,10 @@ def _extract_fields_for_category(category_name: str, row: pd.Series) -> tuple[st
         return _value(1), _value(3)
     if category_name in MATERIAL_LIKE:
         return '', _value(2)
+    if category_name == WASTE_CATEGORY:
+        return '', _value(2)
+    if category_name in FINAL_WASTE_CATEGORIES:
+        return '', _value(3)
     if str(category_name).lower().startswith('emissions'):
         return _value(1), _value(3)
     return _value(3), _value(1)
