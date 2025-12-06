@@ -27,6 +27,20 @@ A lightweight preprocessing tool for SimaPro CSV exports. Quickly organizes inpu
 
 ---
 
+## Usage
+
+1. Create a Python 3.12 virtual environment and install dependencies via `pip install -r requirements.txt`.
+2. Export your SimaPro data to Excel and place the files inside a folder, for example `resources/`.
+3. Run the cleaner script
+
+	```bash
+	python scripts/main.py --input_dir resources --output outputs/merged_cleaned.xlsx
+	```
+
+	The command merges every `.xls`/`.xlsx` file under the input folder, deduplicates rows, and saves the consolidated result to the path provided in `--output`.
+
+---
+
 ## License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
